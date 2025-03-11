@@ -1,4 +1,7 @@
 <?php
+require_once "../models/Model.php";
+
+$model = new Model();
 
 $content = '../views/dashboard.php';
 
@@ -13,7 +16,7 @@ switch ($view) {
 
     case 'insert':
         $title   = "New Record";
-        $content = '../views/form.php';
+        $content = '../views/tabs/insert_record.php';
         $record  = 'active';
         break;
 

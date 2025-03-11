@@ -2,6 +2,11 @@
 session_start(); // ✅ Start session to access stored data
 $errors = $_SESSION['errors'] ?? []; // ✅ Get stored errors
 $old_data = $_SESSION['old_data'] ?? []; // ✅ Get old input
+// if(isset($_SESSION['old_data']) && !empty($_SESSION['old_data'])){
+//     echo "<pre>";
+//     print_r($_SESSION['old_data']);
+//     echo "</pre>";
+// }
 ?>
 
 <!DOCTYPE html>
@@ -9,13 +14,12 @@ $old_data = $_SESSION['old_data'] ?? []; // ✅ Get old input
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../../assets/compiled/css/app.css">
-    <link rel="stylesheet" href="../../assets/compiled/css/app-dark.css">
-    <link rel="stylesheet" href="../../assets/compiled/css/iconly.css">
-    <link rel="stylesheet" href="../../assets/extensions/simple-datatables/style.css">
-    <link rel="stylesheet" href="../../assets/compiled/css/table-datatable.css">
+    <link rel="stylesheet" href="../assets/compiled/css/app.css">
+    <link rel="stylesheet" href="../assets/compiled/css/iconly.css">
+    <link rel="stylesheet" href="../assets/extensions/simple-datatables/style.css">
+    <link rel="stylesheet" href="../assets/compiled/css/table-datatable.css">
 </head>
 <body>
     <!-- <script src="assets/static/js/initTheme.js"></script> -->
@@ -66,7 +70,6 @@ $old_data = $_SESSION['old_data'] ?? []; // ✅ Get old input
                             <!-- For Admin Dashboard sidebars -->
                             <li class="sidebar-item <?php echo $dashboard; ?>"><a class="sidebar-link" href="../public/index.php?page=dashboard"><i class="bi bi-grid-fill"></i><span>Dashboard</span></a></li>
                             <li class="sidebar-item <?php echo $insert; ?>"><a class="sidebar-link" href="../public/index.php?page=insert"><i class="bi bi-grid-fill"></i><span>Insert</span></a></li>
-
                     </ul>
                 </div>
             </div>
@@ -80,11 +83,19 @@ $old_data = $_SESSION['old_data'] ?? []; // ✅ Get old input
             <?php include($content); ?>
         </div>
     </div>
-    <script src="../../assets/static/js/components/dark.js"></script>
-    <script src="../../assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="../../assets/compiled/js/app.js"></script>
-    <script src="../../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
-    <script src="../../assets/static/js/pages/simple-datatables.js"></script>
+    <script src="../assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="../assets/compiled/js/app.js"></script>
+    <script src="../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="../assets/static/js/pages/simple-datatables.js"></script>
+    <script src="../assets/js/edit-regions.js"></script>
+    <script src="../assets/js/regions.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/fill.js"></script>
+    <script src="../assets/js/validation.js"></script>
+    <script src="../assets/js/input-select-toggle.js"></script>
+    <script src="../assets/js/edit-handler.js"></script>
+    <script src="../>assets/js/user-details-modal.js"></script>
+    <script src="../assets/js/delete-data-modal.js"></script>
     <script>if (window.history.replaceState) { window.history.replaceState(null, null, window.location.href)}</script>
 </body>
 </html>

@@ -13,9 +13,9 @@
         "models/models.php": true,
         "models/UserModel.php": true,
         "routes": true,
-        "validators": true,
         "index.php": true,
-        "views": true
+        "views": true,
+        "validators": true
     },
     "hide-files.files": [
         "config",
@@ -25,8 +25,8 @@
         "models/models.php",
         "models/UserModel.php",
         "routes",
-        "validators",
         "index.php",
-        "views"
+        "views",
+        "validators"
     ]
 }

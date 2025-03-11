@@ -91,7 +91,7 @@ class Validator {
     }
 
     private function validateNoDoubleSpaces($field, $value) {
-        if (preg_match("/\s{2,}/", $value)) {
+        if (!empty($value) && preg_match("/\s{2,}/", $value)) {
             $this->errors[$field][] = ucfirst($field) . " should not contain double spaces.";
         }
     }
