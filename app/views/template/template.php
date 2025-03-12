@@ -1,5 +1,4 @@
 <?php
-session_start(); // ✅ Start session to access stored data
 $errors = $_SESSION['errors'] ?? []; // ✅ Get stored errors
 $old_data = $_SESSION['old_data'] ?? []; // ✅ Get old input
 // if(isset($_SESSION['old_data']) && !empty($_SESSION['old_data'])){
@@ -20,6 +19,8 @@ $old_data = $_SESSION['old_data'] ?? []; // ✅ Get old input
     <link rel="stylesheet" href="../assets/compiled/css/iconly.css">
     <link rel="stylesheet" href="../assets/extensions/simple-datatables/style.css">
     <link rel="stylesheet" href="../assets/compiled/css/table-datatable.css">
+    <link rel="stylesheet" href="../assets/styles.css">
+
 </head>
 <body>
     <!-- <script src="assets/static/js/initTheme.js"></script> -->
@@ -69,7 +70,6 @@ $old_data = $_SESSION['old_data'] ?? []; // ✅ Get old input
                     <ul class="menu">
                             <!-- For Admin Dashboard sidebars -->
                             <li class="sidebar-item <?php echo $dashboard; ?>"><a class="sidebar-link" href="../public/index.php?page=dashboard"><i class="bi bi-grid-fill"></i><span>Dashboard</span></a></li>
-                            <li class="sidebar-item <?php echo $insert; ?>"><a class="sidebar-link" href="../public/index.php?page=insert"><i class="bi bi-grid-fill"></i><span>Insert</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -94,7 +94,7 @@ $old_data = $_SESSION['old_data'] ?? []; // ✅ Get old input
     <script src="../assets/js/validation.js"></script>
     <script src="../assets/js/input-select-toggle.js"></script>
     <script src="../assets/js/edit-handler.js"></script>
-    <script src="../>assets/js/user-details-modal.js"></script>
+    <script src="../assets/js/user-details-modal.js"></script>
     <script src="../assets/js/delete-data-modal.js"></script>
     <script>if (window.history.replaceState) { window.history.replaceState(null, null, window.location.href)}</script>
 </body>

@@ -1,5 +1,10 @@
 <?php
+session_start();
 require_once "../models/Model.php";
+require_once "../views/tabs/delete_record.php";
+require_once "../views/tabs/update_record.php";
+require_once "../views/tabs/retrieve_record.php";
+
 
 $model = new Model();
 

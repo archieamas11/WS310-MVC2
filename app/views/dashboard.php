@@ -101,7 +101,7 @@
                                     <div class="btn-group-vertical me-1 mb-1 dropstart">
                                         <button type="button" class="btn edit-btn" data-bs-toggle="modal"
                                             data-bs-target="#inlineForm"
-                                            data-id="<?php echo $row['user_id']; ?>" data-toggle="tooltip" data-placement="top" title="Edit data">
+                                            data-editId="<?php echo $row['user_id']; ?>" data-toggle="tooltip" data-placement="top" title="Edit data (<?php echo $row['user_id']; ?>)">
                                             <i class="fas fa-edit"></i>
                                         </button>
 
@@ -114,8 +114,7 @@
                                         <button type="button" class="btn view-btn" data-bs-toggle="modal"
                                             data-bs-target="#viewForm" 
                                             data-id="<?php echo $row['user_id']; ?>"
-                                            onclick="viewData(<?php echo $row['user_id']; ?>)"
-                                            data-toggle="tooltip" data-placement="top" title="View data">
+                                            data-toggle="tooltip" data-placement="top" title="View data (<?php echo $row['user_id']; ?>)">
                                             <i class="fa-regular fa-circle-question"></i>
                                         </button>
                                     </div>

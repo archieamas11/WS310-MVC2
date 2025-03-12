@@ -3,11 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     editButtons.forEach(button => {
         button.addEventListener("click", function () {
-            let userId = this.getAttribute("data-id"); // Get user_id from button
+            let userId = this.getAttribute("data-editId"); // Get user_id from button
             let form = document.getElementById("editForm");
 
+            console.log(userId);
+
             // Update form action dynamically
-            form.action = `function/function.php?user_id=${userId}&action=update`;
+            form.action = `../controllers/Controller.php?update_id=${userId}`;
 
             // Also update the hidden input field
             document.getElementById("edit-user-id").value = userId;

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Configuration
     const API_BASE_URL = window.location.origin + "/ws310";
     // const FETCH_USER_ENDPOINT = `${API_BASE_URL}/fetch_user.php`;
-    const FETCH_USER_ENDPOINT = `${API_BASE_URL}/admin/function/function.php?action=get`;
+    const FETCH_USER_ENDPOINT = `${API_BASE_URL}/app/controllers/Controller.php?retrieve_id`;
 
     console.log(`API_BASE_URL: ${API_BASE_URL}`);
     console.log(`FETCH_USER_ENDPOINT: ${FETCH_USER_ENDPOINT}`);
@@ -49,39 +49,56 @@ document.addEventListener("DOMContentLoaded", function() {
     // Handle edit button clicks
     document.querySelectorAll(".edit-btn").forEach(button => {
         button.addEventListener("click", async function() {
-            const userId = this.dataset.id;
+            const userId = this.getAttribute('data-editId');
             if (!userId) {
                 console.error("No user ID provided");
                 return;
             }
             
-            try {
-                // Fetch user data
-                const response = await fetch(FETCH_USER_ENDPOINT, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                        "X-Requested-With": "XMLHttpRequest" // CSRF protection
-                    },
-                    body: `user_id=${encodeURIComponent(userId)}`
+
+
+            // Make AJAX request to get user data
+            fetch(`../controllers/Controller.php?retrieve_id=${userId}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Validate response data
+                    if (!data || !Array.isArray(data) || data.length === 0) {
+                        throw new Error('Invalid data received from server');
+                    }
+
+                    // Debug: Log the data to the console
+                    console.log('Received data:', data);
+
+                    // Helper function to safely populate fields
+                    const populateField = (elementId, value, fallback = 'N/A') => {
+                        const element = document.getElementById(elementId);
+                        if (element) {
+                            element.textContent = value || fallback;
+                        } else {
+                            console.warn(`Element with ID ${elementId} not found`);
+                        }
+                    };
+
+                    // Access the first object in the array
+                    const userData = data[0];
+
+                    populateForm(userData);
+
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to load user data. Please try again.');
                 });
-                
-                if (!response.ok) {
-                    throw new Error(`Server returned ${response.status}: ${response.statusText}`);
-                }
-                
-                const data = await response.json();
-                
-                if (data.error) {
-                    throw new Error(data.error);
-                }
-                
-                // Populate form fields
-                populateForm(data);
-            } catch (error) {
-                console.error("Error fetching user data:", error);
-                alert(`Failed to load user data: ${error.message}`);
-            }
         });
     });
     
