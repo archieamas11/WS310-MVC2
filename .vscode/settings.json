@@ -5,28 +5,7 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "config": true,
-        "controllers": true,
-        "controllers/UserController.php": true,
-        "models": true,
-        "models/models.php": true,
-        "models/UserModel.php": true,
-        "routes": true,
-        "index.php": true,
-        "views": true,
-        "validators": true
+        "**/Thumbs.db": true
     },
-    "hide-files.files": [
-        "config",
-        "controllers",
-        "controllers/UserController.php",
-        "models",
-        "models/models.php",
-        "models/UserModel.php",
-        "routes",
-        "index.php",
-        "views",
-        "validators"
-    ]
+    "hide-files.files": []
 }

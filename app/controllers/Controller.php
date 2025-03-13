@@ -50,8 +50,8 @@ class Controller {
             header("Location: ../public/index.php?page=dashboard&error=missing_id");
             exit();
         }
-
-        if ($this->model->update("tbl_users", $data, ["user_id" => $id])) {
+        $updateData = getUserData();
+        if ($this->model->update("tbl_users", $updateData, ["user_id" => $id])) {
             header("Location: ../public/index.php?page=dashboard&success=updated");
             exit();
         } else {
@@ -68,6 +68,7 @@ class Controller {
 
         if ($this->model->delete("tbl_users", ["user_id" => $id])) {
             header("Location: ../public/index.php?page=dashboard&success=deleted");
+            message("Successfully deleted user", "success");
             exit();
         } else {
             header("Location: ../public/index.php?page=dashboard&error=delete_failed");
@@ -89,12 +90,12 @@ class Controller {
             "dob"                       => ['date', 'required'],
             "sex"                       => ['select', 'required'],
             "civil_status"              => ['select', 'required'],
-            "tin"                       => ['number', ['min', 8], ['max', 15]],
+            "tin"                       => ['number', ['min', 9], ['max', 12]],
             "nationality"               => ['string', ['min', 3], ['max', 60], 'required', 'no_double_spaces'],
             "religion"                  => ['string', ['min', 3], ['max', 60], 'no_double_spaces'],
             "place_of_birth"            => ['string', ['min', 3], ['max', 60], 'no_double_spaces'],
             "contact_number"            => ['number', ['min', 7], ['max', 15], 'required'],
-            "email_address"             => ['email', ['min', 5], ['max', 60], 'required'],
+            "email_address"             => ['email', ['min', 5], ['max', 60]],
             "telephone_number"          => ['number', ['min', 7], ['max', 15]],
             "region_code"               => ['select', 'required'],
             "province_code"             => ['select', 'required'],

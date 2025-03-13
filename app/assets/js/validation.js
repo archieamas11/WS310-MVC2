@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const id = input.id;
         
         // Required fields
-        const requiredFields = ['name', 'dob', 'nationality', 'birth_place', 'home_address', 'zipcode'];
+        const requiredFields = ['full_name', 'dob', 'nationality', 'sex', 'home_address', 'zipcode', 'civil_status', 'region_code', 'province_code', 'municipality_code', 'barangay_code', 'contact_number'];
         
         if (requiredFields.includes(name) && value === '') {
             return showError(input, 'This field is required.');
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Special validators
         switch (name) {
-            case 'name':
+            case 'full_name':
                 if (/[^a-zA-Z\s\.\-']/.test(value)) {
                     return showError(input, 'Full name should only contain letters, spaces, dots, hyphens and apostrophes.');
                 }
@@ -81,13 +81,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 break;
                 
-            case 'phone':
+            case 'phone_number':
                 if (value && !value.match(/^09[0-9]{9}$/)) {
                     return showError(input, 'Phone number must be in format 09XXXXXXXXX.');
                 }
                 break;
                 
-            case 'telephone':
+            case 'telephone_number':
                 if (value && !value.match(/^(\+?\d{1,4}[\s-]?)?(\(?\d{1,4}\)?[\s-]?)?\d{3,4}[\s-]?\d{3,4}$/)) {
                     return showError(input, 'Invalid telephone number format.');
                 }
@@ -99,13 +99,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 break;
                 
-            case 'tax_number':
+            case 'tin':
                 if (value && !value.match(/^\d{9,12}$/) && value !== '') {
                     return showError(input, 'TIN must be 9 to 12 digits.');
                 }
                 break;
                 
-            case 'email':
+            case 'email_address':
                 if (value && !validateEmail(value)) {
                     return showError(input, 'Please enter a valid email address.');
                 }
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 
             // Only home address and place of birth can have both letters and numbers
             default:
-                if (name !== 'home_address' && name !== 'birth_place' && name !== 'barangay_name' && value && /\d/.test(value) && /[a-zA-Z]/.test(value)) {
+                if (name !== 'home_address' && name !== 'place_of_birth' && name !== 'barangay_name' && value && /\d/.test(value) && /[a-zA-Z]/.test(value)) {
                     return showError(input, 'Cannot contain both letters and numbers.');
                 }
                 break;

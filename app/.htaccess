@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteRule ^$ public/index.php [L]
+RewriteBase /ws310-mvc/
+
+# Redirect all requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d

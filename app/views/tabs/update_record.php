@@ -12,7 +12,7 @@
                         </div>
                             <div class="col-12 col-md-4">
                                 <label>Full Name</label>
-                                <input type="text" name="name" id="edit-name" class="form-control form-control-lg" placeholder="Empty">
+                                <input type="text" name="full_name" id="edit-name" class="form-control form-control-lg" placeholder="Empty">
                                 <span class="error-feedback text-danger"></span>
                             </div>
                             <div class="col-12 col-md-4">
@@ -32,7 +32,7 @@
                             </div>
                             <div class="col-12 col-md-4">
                                 <label>Civil Status</label>
-                                <select name="status" id="edit-status" class="form-select form-control-lg">
+                                <select name="civil_status" id="edit-status" class="form-select form-control-lg">
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
                                     <option value="widowed">Widowed</option>
@@ -54,27 +54,27 @@
                             </div>
                             <div class="col-12 col-md-4">
                                 <label>Place of Birth</label>
-                                <input type="text" name="birth_place" id="edit-birth-place" class="form-control form-control-lg" placeholder="Empty">
+                                <input type="text" name="place_of_birth" id="edit-birth-place" class="form-control form-control-lg" placeholder="Empty">
                                 <span class="error-feedback text-danger"></span>
                             </div>
                             <div class="col-12 col-md-4">
                                 <label>Tax Number</label>
-                                <input type="number" name="tax_number" id="edit-tax-number" class="form-control form-control-lg" placeholder="Empty">
+                                <input type="number" name="tin" id="edit-tax-number" class="form-control form-control-lg" placeholder="Empty">
                                 <span class="error-feedback text-danger"></span>
                             </div>
                             <div class="col-12 col-md-4">
                                 <label>Phone Number</label>
-                                <input type="number" name="phone" id="edit-phone" class="form-control form-control-lg" placeholder="Empty">
+                                <input type="number" name="contact_number" id="edit-phone" class="form-control form-control-lg" placeholder="Empty">
                                 <span class="error-feedback text-danger"></span>
                             </div>
                             <div class="col-12 col-md-4">
                                 <label>Telephone Number</label>
-                                <input type="text" name="telephone" id="edit-telephone" class="form-control form-control-lg" placeholder="Empty">
+                                <input type="text" name="telephone_number" id="edit-telephone" class="form-control form-control-lg" placeholder="Empty">
                                 <span class="error-feedback text-danger"></span>
                             </div>
                             <div class="col-12 col-md-4">
                                 <label>Email Address</label>
-                                <input type="email" name="email" id="edit-email" class="form-control form-control-lg" placeholder="Empty">
+                                <input type="email" name="email_address" id="edit-email" class="form-control form-control-lg" placeholder="Empty">
                                 <span class="error-feedback text-danger"></span>
                             </div>
                             <div class="col-12 col-md-4">
@@ -121,12 +121,12 @@
                             </div>
                             <div class="col-12 col-md-4">
                                 <label>Father's Full Name</label>
-                                <input type="text" name="father_name" id="edit-father-name" class="form-control form-control-lg" placeholder="Empty">
+                                <input type="text" name="fathers_full_name" id="edit-father-name" class="form-control form-control-lg" placeholder="Empty">
                                 <span class="error-feedback text-danger"></span>
                             </div>
                             <div class="col-12 col-md-4">
                                 <label>Mother's Full Name</label>
-                                <input type="text" name="mother_name" id="edit-mother-name" class="form-control form-control-lg" placeholder="Empty">
+                                <input type="text" name="mothers_full_name" id="edit-mother-name" class="form-control form-control-lg" placeholder="Empty">
                                 <span class="error-feedback text-danger"></span>
                             </div>
                     </div>
