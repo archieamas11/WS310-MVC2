@@ -70,7 +70,7 @@ $old_data = $_SESSION['old_data'] ?? []; // ✅ Get old input
                     <ul class="menu">
                             <!-- For Admin Dashboard sidebars -->
                             <li class="sidebar-item <?php echo $dashboard; ?>"><a class="sidebar-link" href="../public/index.php?page=dashboard"><i class="bi bi-grid-fill"></i><span>Dashboard</span></a></li>
-                            <li class="sidebar-item <?php echo $record; ?>"><a class="sidebar-link" href="../public/index.php?page=record"><i class="bi bi-table"></i><span>Records</span></a></li>
+                            <li class="sidebar-item <?php echo $midterm; ?>"><a class="sidebar-link" href="../public/index.php?page=midterm"><i class="bi bi-table"></i><span>Midterm</span></a></li>
                     </ul>
                 </div>
             </div>

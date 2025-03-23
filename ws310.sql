@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2025 at 03:40 PM
+-- Generation Time: Mar 23, 2025 at 04:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `ws310`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `midterm`
+--
+
+CREATE TABLE `midterm` (
+  `id` int(11) NOT NULL,
+  `address` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `midterm`
+--
+
+INSERT INTO `midterm` (`id`, `address`) VALUES
+(1, 'san fernando'),
+(2, 'toledo city'),
+(3, 'cebu city'),
+(4, 'naga city'),
+(5, 'talisay city'),
+(6, 'minglanilla');
 
 -- --------------------------------------------------------
 
@@ -60,11 +83,41 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`user_id`, `user_full_name`, `date_of_birth`, `sex`, `civil_status`, `tax_identification_number`, `nationality`, `religion`, `place_of_birth`, `phone_number`, `email_address`, `telephone_number`, `region`, `region_code`, `province`, `province_code`, `municipality`, `municipality_code`, `barangay`, `barangay_code`, `home_address`, `zip_code`, `fathers_full_name`, `mothers_full_name`, `date_created`) VALUES
-(1023, 'archie albarico', '2000-10-12', 'female', 'married', '887111111', 'Sit quisquam aut qu', 'Dolore odio nihil ne', 'Animi adipisci accu', '09491853866', 'archiealbarico69@gmail.com', '09491853866', 'Region I (Ilocos Region)', '0100000000', 'Ilocos Norte', '0102800000', 'Vintar', '0102823000', 'San Roque', '0102823053', 'tunghaan', '2222', 'Cheyenne Nora Stokes Reynolds', 'Faith Wallace Hall Rich', '2025-02-22');
+(1056, 'archie amas albarico', '2000-10-24', 'male', 'married', '123123132', 'filipino', 'Eius qui atque est', 'vicente sotto memorial medical center', '09491853866', 'archiealbarico69@gmail.com', '', 'Region VII (Central Visayas)', '0700000000', 'Cebu', '0702200000', 'Minglanilla', '0702232000', 'Poblacion Ward IV', '0702232013', 'Tunghaan, Minglanilla, Cebu', '6046', 'mario beduya albarico', 'jessie amas luna', '2025-03-16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `test`
+--
+
+CREATE TABLE `test` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `dob` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `test`
+--
+
+INSERT INTO `test` (`id`, `first_name`, `dob`) VALUES
+(1, 'archie', '2000-03-12'),
+(2, 'archie', '2000-03-12'),
+(3, 'Lacy', '2004-12-29'),
+(4, 'Shannon', '2000-03-12'),
+(5, 'archie', '2000-10-24'),
+(6, 'archie', '2000-10-24');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `midterm`
+--
+ALTER TABLE `midterm`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_users`
@@ -73,14 +126,32 @@ ALTER TABLE `tbl_users`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `test`
+--
+ALTER TABLE `test`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `midterm`
+--
+ALTER TABLE `midterm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1028;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1058;
+
+--
+-- AUTO_INCREMENT for table `test`
+--
+ALTER TABLE `test`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

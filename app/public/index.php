@@ -30,10 +30,10 @@ switch ($view) {
         $activity = 'active';
         break;
 
-    case 'record':
-        $title    = "Records";
-        $content  = '../views/tabs/insert_record.php';
-        $record   = 'active';
+    case 'midterm':
+        $title    = "Midterm";
+        $content  = '../views/tabs/midterm.php';
+        $midterm   = 'active';
         break;
 
     default:
