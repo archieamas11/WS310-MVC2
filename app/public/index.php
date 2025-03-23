@@ -5,7 +5,6 @@ require_once "../views/tabs/delete_record.php";
 require_once "../views/tabs/update_record.php";
 require_once "../views/tabs/retrieve_record.php";
 
-
 $model = new Model();
 
 $content = '../views/dashboard.php';
@@ -29,6 +28,13 @@ switch ($view) {
         $title    = "Logout";
         $content  = 'logout.php';
         $activity = 'active';
+        break;
+
+    case 'record':
+        $title    = "Records";
+        $content  = '../views/tabs/insert_record.php';
+        $record   = 'active';
+        break;
 
     default:
         $title     = "Dashboard";
