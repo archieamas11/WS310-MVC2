@@ -7,6 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
         var userId = button.getAttribute("data-userid");
 
         // Update the delete link dynamically
-        confirmDeleteBtn.href = `../controllers/Controller.php?delete_id=${userId}`;
+        confirmDeleteBtn.href = `../controllers/UserController.php?delete_id=${userId}`;
     });
 });

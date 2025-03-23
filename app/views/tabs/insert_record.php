@@ -30,7 +30,7 @@
     </div>
     <section class="section">
         <!-- <form class="record-form" action="function/function.php?action=add" method="POST"> -->
-        <form method="post" action="../controllers/Controller.php">
+        <form method="post" action="../controllers/UserController.php">
             <div class="card p-3">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title">Personal Data</h5>

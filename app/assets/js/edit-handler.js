@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(userId);
 
             // Update form action dynamically
-            form.action = `../controllers/Controller.php?update_id=${userId}`;
+            form.action = `../controllers/UserController.php?update_id=${userId}`;
 
             // Also update the hidden input field
             document.getElementById("edit-user-id").value = userId;

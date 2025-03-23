@@ -1,7 +1,7 @@
 <div class="modal fade modal-xl" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33">
     <div class="modal-dialog modal-dialog-centered modal-dialog" role="document">
         <div class="modal-content">
-            <form class="record-form" id="editForm" action="../../controllers/Controller.php" method="POST">
+            <form class="record-form" id="editForm" action="../../controllers/UserController.php" method="POST">
                 <div class="modal-body p-3">
                 <input type="text" name="user_id" id="edit-user-id" placeholder="Empty" hidden>
                 <input type="text" name="update" value="1" id="edit-update" placeholder="Empty" hidden>

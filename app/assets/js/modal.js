@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
             // Make AJAX request to get user data
-            fetch(`../controllers/Controller.php?retrieve_id=${userId}`, {
+            fetch(`../controllers/UserController.php?retrieve_id=${userId}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

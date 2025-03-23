@@ -99,18 +99,21 @@
                                 </td>
                                 <td style="text-align: center;">
                                     <div class="btn-group-vertical me-1 mb-1 dropstart">
+                                        <!-- Edit Button -->
                                         <button type="button" class="btn edit-btn" data-bs-toggle="modal"
                                             data-bs-target="#inlineForm"
                                             data-editId="<?php echo $row['user_id']; ?>" data-toggle="tooltip" data-placement="top" title="Edit data (<?php echo $row['user_id']; ?>)">
                                             <i class="fas fa-edit"></i>
                                         </button>
 
+                                        <!-- Delete Button -->
                                         <a href="#" class="btn icon delete-btn" data-bs-toggle="modal" 
                                             data-bs-target="#deleteModal" 
                                             data-userid="<?php echo $row['user_id']; ?>" title="Delete data">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </a>
 
+                                        <!-- View Button -->
                                         <button type="button" class="btn view-btn" data-bs-toggle="modal"
                                             data-bs-target="#viewForm" 
                                             data-id="<?php echo $row['user_id']; ?>"
